@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff4e553866838d34f9a13e3c6596cdd9, type: 3}
+  m_Name: Grass
+  m_EditorClassIdentifier: 
+  possibleTerrain:
+  - {fileID: 4392405561807115923, guid: e0354bddbf383fd4c84d0a6208bf9653, type: 3}
+  - {fileID: 5491232269142873622, guid: d806dca6652b9174d94ae61a745c5cf2, type: 3}
+  - {fileID: 5108420438974394241, guid: 14e2086dc8ed2be4193763d7d86c94ec, type: 3}
+  maxInSuccession: 1
