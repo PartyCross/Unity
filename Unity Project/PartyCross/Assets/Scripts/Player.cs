@@ -19,7 +19,14 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        ++score;
+        if ((Input.GetKeyDown(KeyCode.A))||(Input.GetKeyDown(KeyCode.D)) || (Input.GetKeyDown(KeyCode.S)))
+        {
+            score = score + 100;
+        }
+        else if( (score!=0) && (Input.GetKeyDown(KeyCode.W)))
+        {
+            score = score - 100;
+        }
     }
 
     private void Update()
@@ -51,6 +58,7 @@ public class Player : MonoBehaviour
             }
             MoveCharacter(new Vector3(-1, 0, zDifference));
         }
+        FixedUpdate();
     }
 
     private void MoveCharacter(Vector3 difference)
