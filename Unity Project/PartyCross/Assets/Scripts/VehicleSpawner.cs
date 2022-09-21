@@ -6,15 +6,29 @@ public class VehicleSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject vehicle;
     [SerializeField] private Transform spawnPos;
+    [SerializeField] private Transform endPos;
 
     private void Start()
     {
         StartCoroutine(SpawnVehicle());
     }
 
+    private void Update()
+    {
+        if(vehicle.transform.position.z >= endPos.transform.position.z)
+        {
+            RespawnVehicle();
+        }
+    }
+
     private IEnumerator SpawnVehicle()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(Random.Range(1,5));
         Instantiate(vehicle, spawnPos.position, Quaternion.identity);
+    }
+
+    private void RespawnVehicle()
+    {
+        vehicle = Instantiate(vehicle, spawnPos.position, Quaternion.identity);
     }
 }
