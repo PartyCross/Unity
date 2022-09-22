@@ -778,6 +778,14 @@ PrefabInstance:
       propertyPath: terrainGenerator
       value: 
       objectReference: {fileID: 498135277}
+    - target: {fileID: 2597989525796148315, guid: 2b75ebe452e1fb14f9b33401c2c3db2b, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: b8c91c9137a2fe14e873d70d7bd450b0, type: 2}
+    - target: {fileID: 2597989525796148316, guid: 2b75ebe452e1fb14f9b33401c2c3db2b, type: 3}
+      propertyPath: m_Constraints
+      value: 122
+      objectReference: {fileID: 0}
     - target: {fileID: 2597989525796148317, guid: 2b75ebe452e1fb14f9b33401c2c3db2b, type: 3}
       propertyPath: m_RootOrder
       value: 4

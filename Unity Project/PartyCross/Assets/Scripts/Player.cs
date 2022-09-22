@@ -29,6 +29,21 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.collider.GetComponent<Plank>() != null)
+        {
+            if (collision.collider.GetComponent<Plank>().isLog)
+            {
+                transform.parent = collision.collider.transform;
+            }
+        }
+        else
+        {
+            transform.parent = null;
+        }
+    }
+
     private void Update()
     {
         scoreText.text = "Score: " + score;

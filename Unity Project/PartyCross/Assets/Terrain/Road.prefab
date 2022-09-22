@@ -146,6 +146,7 @@ MonoBehaviour:
   vehicle: {fileID: 6569561451157616923, guid: 61c5c86a1a1a59946a6bad94529dba30, type: 3}
   spawnPos: {fileID: 6608079247195348054}
   endPos: {fileID: 6191323770483551663}
+  isRightSide: 1
 --- !u!1 &8793370716241214012
 GameObject:
   m_ObjectHideFlags: 0

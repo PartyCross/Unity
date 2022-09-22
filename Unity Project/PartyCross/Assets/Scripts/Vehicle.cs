@@ -15,4 +15,12 @@ public class Vehicle : MonoBehaviour
     {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.collider.GetComponent<Player>() != null)
+        {
+            Destroy(collision.gameObject);
+        }
+    }
 }
