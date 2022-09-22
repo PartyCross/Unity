@@ -24,11 +24,16 @@ public class VehicleSpawner : MonoBehaviour
     private IEnumerator SpawnVehicle()
     {
         yield return new WaitForSeconds(Random.Range(1,5));
-        Instantiate(vehicle, spawnPos.position, Quaternion.identity);
+        vehicle = Instantiate(vehicle, spawnPos.position, Quaternion.identity);
+    }
+
+    private void DespawnVehicle()
+    {
+
     }
 
     private void RespawnVehicle()
     {
-        vehicle = Instantiate(vehicle, spawnPos.position, Quaternion.identity);
+        vehicle.transform.position = spawnPos.position;
     }
 }

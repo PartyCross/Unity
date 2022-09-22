@@ -14,11 +14,14 @@ public class TerrainGenerator : MonoBehaviour
 
     private void Start()
     {
+        GameObject firstTerrain = Instantiate(terrainDatas[0].possibleTerrain[Random.Range(0, terrainDatas[0].possibleTerrain.Count)], currentPosition, Quaternion.identity, terrainHolder);
+        currentTerrains.Add(firstTerrain);
+        currentPosition.x++;
         for (int i = 0; i < maxTerrainCount; ++i)
         {
             SpawnTerrain(true, new Vector3(0,0,0));
         }
-        maxTerrainCount = currentTerrains.Count;
+        maxTerrainCount = currentTerrains.Count + 1;
     }
 
     public void SpawnTerrain(bool isStart, Vector3 playerPos)
@@ -30,8 +33,8 @@ public class TerrainGenerator : MonoBehaviour
 
             for (int i = 0; i < terrainInSuccession; ++i)
             {
-                GameObject terrain2 = Instantiate(terrainDatas[whichTerrain].possibleTerrain[Random.Range(0,terrainDatas[whichTerrain].possibleTerrain.Count)], currentPosition, Quaternion.identity, terrainHolder);
-                currentTerrains.Add(terrain2);
+                GameObject terrain = Instantiate(terrainDatas[whichTerrain].possibleTerrain[Random.Range(0,terrainDatas[whichTerrain].possibleTerrain.Count)], currentPosition, Quaternion.identity, terrainHolder);
+                currentTerrains.Add(terrain);
                 if (!isStart)
                 {
                     if (currentTerrains.Count > maxTerrainCount)
