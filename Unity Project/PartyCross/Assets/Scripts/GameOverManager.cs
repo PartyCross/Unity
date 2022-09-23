@@ -11,13 +11,14 @@ public class GameOverManager : MonoBehaviour
     private void OnEnable()
     {
         KillOnTouch.OnPlayerDeath += EnableGameOverMenu;
-        
+        PlayerHealth.OnPlayerDeath += EnableGameOverMenu;
         
     }
 
     public void OnDisable()
     {
         KillOnTouch.OnPlayerDeath -= EnableGameOverMenu;
+        PlayerHealth.OnPlayerDeath -= EnableGameOverMenu;
     }
 
     public void EnableGameOverMenu()
