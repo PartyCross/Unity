@@ -1,5 +1,1 @@
-<<<<<<< Updated upstream
-C:\Users\shawn\OneDrive - AUT University\Desktop\PartyCross
-=======
-E:\Dan\Documents\GitHub\Unity\Unity Project\PartyCross
->>>>>>> Stashed changes
+C:\Users\charl\Documents\GitHub\Unity\Unity Project\PartyCross

@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: d605be2b8c562d9459cefc7a70773586
+  - enabled: 1
+    path: Assets/PartyCross.unity
+    guid: 2af297d980f229841a1cdb875f2fd785
+  - enabled: 1
+    path: Assets/Scenes/NextView.unity
+    guid: 50c4f93e130fe2f40924db9a0ef7a315
   m_configObjects: {}

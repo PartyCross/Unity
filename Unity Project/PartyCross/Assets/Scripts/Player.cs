@@ -1,3 +1,4 @@
+//using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,12 +6,15 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    //public static event Action OnPlayerDeath;
+
     [SerializeField] private TerrainGenerator terrainGenerator;
     [SerializeField] private Text scoreText;
 
     private Animator animator;
     private bool isHopping;
     private int score;
+    private KeyCode keycodeConversion;
 
     private void Start()
     {
@@ -19,20 +23,37 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if ((Input.GetKeyDown(KeyCode.A))||(Input.GetKeyDown(KeyCode.D)) || (Input.GetKeyDown(KeyCode.S)))
+        if ((Input.GetKeyDown(KeyCode.A)) || (Input.GetKeyDown(KeyCode.D)) || (Input.GetKeyDown(KeyCode.S)))
         {
             score = score + 100;
         }
-        else if( (score!=0) && (Input.GetKeyDown(KeyCode.W)))
+        else if(((score!=0) && (Input.GetKeyDown(KeyCode.W))) || (keycodeConversion == KeyCode.W))
         {
             score = score - 100;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.collider.GetComponent<Plank>() != null)
+        {
+            if (collision.collider.GetComponent<Plank>().isLog)
+            {
+                transform.parent = collision.collider.transform;
+
+                //OnPlayerDeath?.Invoke();
+            }
+        }
+        else
+        {
+            transform.parent = null;
         }
     }
 
     private void Update()
     {
         scoreText.text = "Score: " + score;
-        if (Input.GetKeyDown(KeyCode.S) && !isHopping)
+        if (Input.GetKeyDown(KeyCode.S) || (keycodeConversion == KeyCode.S) && !isHopping)
         {
             float zDifference = 0;
             if(transform.position.z % 1 != 0)
@@ -41,15 +62,15 @@ public class Player : MonoBehaviour
             }
             MoveCharacter(new Vector3(1, 0, zDifference));
         }
-        else if (Input.GetKeyDown(KeyCode.D) && !isHopping)
+        else if (Input.GetKeyDown(KeyCode.D) || (keycodeConversion == KeyCode.D) && !isHopping)
         {
             MoveCharacter(new Vector3(0, 0, 1));
         }
-        else if (Input.GetKeyDown(KeyCode.A) && !isHopping)
+        else if (Input.GetKeyDown(KeyCode.A) || (keycodeConversion == KeyCode.A) && !isHopping)
         {
             MoveCharacter(new Vector3(0, 0, -1));
         }
-        else if (Input.GetKeyDown(KeyCode.W) && !isHopping)
+        else if (Input.GetKeyDown(KeyCode.W) || (keycodeConversion == KeyCode.W) && !isHopping)
         {
             float zDifference = 0;
             if (transform.position.z % 1 != 0)
@@ -72,5 +93,29 @@ public class Player : MonoBehaviour
     public void FinishHop()
     {
         isHopping = false;
+    }
+
+    public void UpTouch()
+    {
+        keycodeConversion = KeyCode.W;
+        Update();
+    }
+
+    public void DownTouch()
+    {
+        keycodeConversion = KeyCode.S;
+        Update();
+    }
+
+    public void LeftTouch()
+    {
+        keycodeConversion = KeyCode.A;
+        Update();
+    }
+
+    public void RightTouch()
+    {
+        keycodeConversion = KeyCode.D;
+        Update();
     }
 }
