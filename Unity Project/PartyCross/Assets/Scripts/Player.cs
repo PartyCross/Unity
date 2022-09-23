@@ -1,3 +1,4 @@
+//using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,8 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    //public static event Action OnPlayerDeath;
+
     [SerializeField] private TerrainGenerator terrainGenerator;
     [SerializeField] private Text scoreText;
 
@@ -36,6 +39,8 @@ public class Player : MonoBehaviour
             if (collision.collider.GetComponent<Plank>().isLog)
             {
                 transform.parent = collision.collider.transform;
+
+                //OnPlayerDeath?.Invoke();
             }
         }
         else
