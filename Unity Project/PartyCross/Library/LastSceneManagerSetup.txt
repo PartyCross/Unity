@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Controller.unity
+- path: Assets/PartyCross.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

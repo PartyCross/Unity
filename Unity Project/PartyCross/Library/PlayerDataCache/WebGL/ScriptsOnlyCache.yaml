@@ -1,8 +1,22 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - ButtonPress
+    - ButtonPressUp
+    - FollowPlayer
+    - Player
+    - TerrainData
+    - TerrainGenerator
+    - TestController
     - UnityHTTPServer
+    - Vehicle
+    - VehicleSpawner
+    Cinemachine.dll:
+    - Cinemachine.CinemachineBrain
+    - Cinemachine.CinemachineComposer
+    - Cinemachine.CinemachineFreeLook
+    - Cinemachine.CinemachineOrbitalTransposer
+    - Cinemachine.CinemachinePipeline
+    - Cinemachine.CinemachineVirtualCamera
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro.dll:
@@ -22,7 +36,18 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.Text
   serializedClasses:
+    Cinemachine:
+    - Cinemachine.AxisState
+    - Cinemachine.AxisState/Recentering
+    - Cinemachine.CinemachineBlendDefinition
+    - Cinemachine.CinemachineBrain/BrainEvent
+    - Cinemachine.CinemachineBrain/VcamActivatedEvent
+    - Cinemachine.CinemachineFreeLook/Orbit
+    - Cinemachine.CinemachineOrbitalTransposer/Heading
+    - Cinemachine.CinemachineVirtualCameraBase/TransitionParams
+    - Cinemachine.LensSettings
     Unity.TextMeshPro:
     - TMPro.FaceInfo_Legacy
     - TMPro.FontAssetCreationSettings
@@ -50,23 +75,112 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.AnimationTriggers
     - UnityEngine.UI.Button/ButtonClickedEvent
     - UnityEngine.UI.ColorBlock
+    - UnityEngine.UI.FontData
     - UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
     - UnityEngine.UI.Navigation
     - UnityEngine.UI.SpriteState
   methodsToPreserve:
   - assembly: Assembly-CSharp
-    fullTypeName: ButtonPress
-    methodName: test
-  - assembly: Assembly-CSharp
-    fullTypeName: ButtonPress
-    methodName: test
-  - assembly: Assembly-CSharp
-    fullTypeName: ButtonPress
-    methodName: test
-  - assembly: Assembly-CSharp
-    fullTypeName: ButtonPress
-    methodName: test
+    fullTypeName: ButtonPressUp
+    methodName: update
   sceneClasses:
+    Assets/PartyCross.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1538}
+    - Class: 114
+      Script: {instanceID: 1774}
+    - Class: 114
+      Script: {instanceID: 2118}
+    - Class: 114
+      Script: {instanceID: 2234}
+    - Class: 114
+      Script: {instanceID: 2338}
+    - Class: 114
+      Script: {instanceID: 2438}
+    - Class: 114
+      Script: {instanceID: 2560}
+    - Class: 114
+      Script: {instanceID: 2600}
+    - Class: 114
+      Script: {instanceID: 2604}
+    - Class: 114
+      Script: {instanceID: 2678}
+    - Class: 114
+      Script: {instanceID: 2746}
+    - Class: 114
+      Script: {instanceID: 2824}
+    - Class: 114
+      Script: {instanceID: 2950}
+    - Class: 114
+      Script: {instanceID: 2978}
+    - Class: 114
+      Script: {instanceID: 3184}
+    - Class: 114
+      Script: {instanceID: 3676}
+    - Class: 114
+      Script: {instanceID: 3826}
+    - Class: 114
+      Script: {instanceID: 3902}
+    - Class: 114
+      Script: {instanceID: 4672}
+    - Class: 114
+      Script: {instanceID: 5170}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 135
+      Script: {instanceID: 0}
+    - Class: 136
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
     Assets/Scenes/Controller.unity:
     - Class: 1
       Script: {instanceID: 0}
@@ -76,15 +190,31 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 21
       Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
     - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
     - Class: 49
       Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 89
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -95,7 +225,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1886}
     - Class: 114
+      Script: {instanceID: 2118}
+    - Class: 114
       Script: {instanceID: 2230}
+    - Class: 114
+      Script: {instanceID: 2338}
     - Class: 114
       Script: {instanceID: 2600}
     - Class: 114
@@ -109,15 +243,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3902}
     - Class: 114
-      Script: {instanceID: 4314}
+      Script: {instanceID: 4042}
     - Class: 114
-      Script: {instanceID: 4442}
+      Script: {instanceID: 4316}
     - Class: 114
-      Script: {instanceID: 4758}
+      Script: {instanceID: 4444}
     - Class: 114
-      Script: {instanceID: 21194}
-    - Class: 114
-      Script: {instanceID: 21688}
+      Script: {instanceID: 4760}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -815,6 +947,12 @@ ScriptsOnlyBuild:
     className: CinemachineIndependentImpulseListener
   - hash:
       serializedVersion: 2
+      Hash: f97485af2bd078c4f87de02414d024de
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ButtonPressUp
+  - hash:
+      serializedVersion: 2
       Hash: a1ca1237bad0f30ea5ba8f4060929114
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
@@ -1113,13 +1251,8 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
     className: TMP_TextEventCheck
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ButtonPress
   platform: 20
   scenePathNames:
   - Assets/Scenes/Controller.unity
+  - Assets/PartyCross.unity
   playerPath: E:/Dan/Documents/GitHub/Unity/Unity Project/PartyCross/Demo

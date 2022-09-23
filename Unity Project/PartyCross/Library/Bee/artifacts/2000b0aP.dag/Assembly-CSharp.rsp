@@ -288,7 +288,7 @@
 -r:"Library/Bee/artifacts/2000b0aP.dag/Unity.TextMeshPro.ref.dll"
 -r:"Library/Bee/artifacts/2000b0aP.dag/Unity.Timeline.ref.dll"
 -r:"Library/Bee/artifacts/2000b0aP.dag/UnityEngine.UI.ref.dll"
-"Assets/Scripts/ButtonPress.cs"
+"Assets/Scripts/ButtonPressUp.cs"
 "Assets/Scripts/FollowPlayer.cs"
 "Assets/Scripts/Player.cs"
 "Assets/Scripts/SimpleHTTPServer.cs"
