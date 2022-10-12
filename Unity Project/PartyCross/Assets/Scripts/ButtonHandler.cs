@@ -11,7 +11,7 @@ public class ButtonHandler : MonoBehaviour
         SceneManager.LoadScene(2);
     }
 
-    public void JoinGame()
+    public void CreateGame()
     {
         //pending server
     }

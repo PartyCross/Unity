@@ -8,7 +8,7 @@ public class Vehicle : MonoBehaviour
 
     private void Start()
     {
-        speed = (Random.Range(1,4) * 10); 
+        speed = (Random.Range(2,5) * 5); 
     }
    
     private void Update()

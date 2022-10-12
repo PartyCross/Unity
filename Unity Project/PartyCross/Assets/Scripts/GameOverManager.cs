@@ -23,11 +23,13 @@ public class GameOverManager : MonoBehaviour
 
     public void EnableGameOverMenu()
     {
+        gameOverMenu.GetComponent<AudioHandler>().KillPlayer();
         gameOverMenu.SetActive(true);
     }
 
     public void RestartLevel()
     {
+        gameOverMenu.GetComponent<AudioHandler>().RespawnPlayer();
         SceneManager.LoadScene(1);
     }
     

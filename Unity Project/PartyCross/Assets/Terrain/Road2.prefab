@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 105428498084751210}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.824, z: -0.472}
+  m_LocalPosition: {x: 0, y: 0.824, z: -0.497}
   m_LocalScale: {x: 1, y: 1, z: 50}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -146,6 +146,7 @@ MonoBehaviour:
   vehicle: {fileID: 6569561451157616923, guid: 61c5c86a1a1a59946a6bad94529dba30, type: 3}
   spawnPos: {fileID: 2362779753718464768}
   endPos: {fileID: 3355984984949190905}
+  isRightSide: 0
 --- !u!1 &2952528180459983808
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,19 +15,22 @@ public class Player : MonoBehaviour
     private bool isHopping;
     private int score;
     private KeyCode keycodeConversion;
+    private AudioSource stepSound;
+    private Vector3 prevMove;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
+        stepSound = this.GetComponent<AudioSource>();
     }
 
     private void FixedUpdate()
     {
-        if ((Input.GetKeyDown(KeyCode.A)) || (Input.GetKeyDown(KeyCode.D)) || (Input.GetKeyDown(KeyCode.S)))
+        if (Input.GetKeyDown(KeyCode.S))
         {
             score = score + 100;
         }
-        else if(((score!=0) && (Input.GetKeyDown(KeyCode.W))) || (keycodeConversion == KeyCode.W))
+        else if((score!=0) && (Input.GetKeyDown(KeyCode.W)))
         {
             score = score - 100;
         }
@@ -48,10 +51,17 @@ public class Player : MonoBehaviour
         {
             transform.parent = null;
         }
+
+        if(collision.gameObject.name.Substring(0,4) == "Bush" || collision.gameObject.name.Substring(0,4) == "Tree") {
+            this.UndoLastMove();
+        }
     }
 
     private void Update()
     {
+        if(this.transform.position.y < -5) {
+            this.GetComponent<PlayerHealth>().decreaseHealth(100000);
+        }
         scoreText.text = "Score: " + score;
         if (Input.GetKeyDown(KeyCode.S) || (keycodeConversion == KeyCode.S) && !isHopping)
         {
@@ -85,9 +95,17 @@ public class Player : MonoBehaviour
     private void MoveCharacter(Vector3 difference)
     {
         animator.SetTrigger("hop");
+        this.stepSound.Play();
         isHopping = true;
         transform.position = (transform.position + difference);
+        this.prevMove = difference;
         terrainGenerator.SpawnTerrain(false, transform.position);
+    }
+
+    private void UndoLastMove() {
+        transform.position = (transform.position - this.prevMove);
+        terrainGenerator.SpawnTerrain(false, transform.position);
+        this.score -= 100;     
     }
 
     public void FinishHop()
