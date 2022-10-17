@@ -32,7 +32,7 @@ public class VehicleSpawner : MonoBehaviour
         vehicle.transform.rotation = Quaternion.Euler(0, spawnPos.rotation.y, 0);
         if (!isRightSide)
         {
-            vehicle.transform.Rotate(new Vector3(0, 180, 0));
+            vehicle.transform.Rotate(new Vector3(0, 179, 0));
         }
     }
 

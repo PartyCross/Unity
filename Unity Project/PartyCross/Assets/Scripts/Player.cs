@@ -89,6 +89,65 @@ public class Player : MonoBehaviour
             }
             MoveCharacter(new Vector3(-1, 0, zDifference));
         }
+
+        //MULTIPLAYER
+        if(CurrentSettings.PlayType) {
+            if (Input.GetKeyDown(KeyCode.K) || (keycodeConversion == KeyCode.K) && !isHopping)
+            {
+                float zDifference = 0;
+                if(transform.position.z % 1 != 0)
+                {
+                    zDifference = Mathf.Round(transform.position.z + 1) - transform.position.z;
+                }
+                MoveCharacter(new Vector3(1, 0, zDifference));
+            }
+            else if (Input.GetKeyDown(KeyCode.L) || (keycodeConversion == KeyCode.L) && !isHopping)
+            {
+                MoveCharacter(new Vector3(0, 0, 1));
+            }
+            else if (Input.GetKeyDown(KeyCode.J) || (keycodeConversion == KeyCode.J) && !isHopping)
+            {
+                MoveCharacter(new Vector3(0, 0, -1));
+            }
+            else if (Input.GetKeyDown(KeyCode.I) || (keycodeConversion == KeyCode.I) && !isHopping)
+            {
+                float zDifference = 0;
+                if (transform.position.z % 1 != 0)
+                {
+                    zDifference = Mathf.Round(transform.position.z + 1) - transform.position.z;
+                }
+                MoveCharacter(new Vector3(-1, 0, zDifference));
+            }
+
+            if (Input.GetKeyDown(KeyCode.DownArrow) || (keycodeConversion == KeyCode.DownArrow) && !isHopping)
+            {
+                float zDifference = 0;
+                if(transform.position.z % 1 != 0)
+                {
+                    zDifference = Mathf.Round(transform.position.z + 1) - transform.position.z;
+                }
+                MoveCharacter(new Vector3(1, 0, zDifference));
+            }
+            else if (Input.GetKeyDown(KeyCode.RightArrow) || (keycodeConversion == KeyCode.RightArrow) && !isHopping)
+            {
+                MoveCharacter(new Vector3(0, 0, 1));
+            }
+            else if (Input.GetKeyDown(KeyCode.LeftArrow) || (keycodeConversion == KeyCode.LeftArrow) && !isHopping)
+            {
+                MoveCharacter(new Vector3(0, 0, -1));
+            }
+            else if (Input.GetKeyDown(KeyCode.UpArrow) || (keycodeConversion == KeyCode.UpArrow) && !isHopping)
+            {
+                float zDifference = 0;
+                if (transform.position.z % 1 != 0)
+                {
+                    zDifference = Mathf.Round(transform.position.z + 1) - transform.position.z;
+                }
+                MoveCharacter(new Vector3(-1, 0, zDifference));
+            }
+        }
+
+
         FixedUpdate();
     }
 
