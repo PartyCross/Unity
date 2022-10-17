@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 989
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Game
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 26392
+  controlID: 66
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 26393
+  controlID: 67
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 26394
+  controlID: 68
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -189,8 +189,8 @@ MonoBehaviour:
     y: 0
     width: 369
     height: 754
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -348,9 +348,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: c47a0000
+      m_SelectedIDs: 6e620000
       m_LastClickedID: 0
-      m_ExpandedIDs: dac9e7ff1ecae7ff62cae7ffb6cae7ff0a65e8ff0c6beaff2cafeaff2af7ebffb41fecff762eecff5e38ecfff838ecffe639ecff8cbfecff2efbecff8844edff1046edff2c48edffdc48edffb698edff1299edff9899edff689aedffb8a3edfff0a4edffac0df1ff7c0ff1ffd011f1ff8e3bf1ff7e74f2fff8d0f2ff766ef3ff5c75f3fff875f3ffa876f3ffd676f3ff7077f3ffdc77f3ff2678f3ff02f3f3ff14f3f3ff301ff4ff30e8f4ff2846f5ffac4df5ffae2ff9ffb226fcffa436fcffc838fcffacdefdff5a7afeff2287feffdc9efefffa9efeffeca6fefff8dffeff2ef6feff20f7feff4804ffff9c9affff0cfbfffff4ffffff508000005e80000070800000828000008c800000403d010078c80100d4ca0100f4ca010084cf0100a4cf010018da010070da010078da010084da0100dce6010018e7010012eb010026eb010058eb01006ceb010082f1010096f1010034fe010070fe0100120202002602020036020200e6020200220302004403020058030200d40f0200c8110200e811020096120200d4120200a8140200f61b0200161c0200c41c0200021d02003a1f0200761f0200ec2002000a210200ce2c02001838020036380200
+      m_ExpandedIDs: 40f7ffffc6f8ffff1cfbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -812,22 +812,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\charl\Documents\GitHub\Unity\Unity Project\PartyCross
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 64}
-    m_SelectedIDs: e64f0000
-    m_LastClickedID: 20454
-    m_ExpandedIDs: 00000000e64f0000e84f0000ea4f0000ec4f000000ca9a3b
+    m_SelectedIDs: bc610000
+    m_LastClickedID: 25020
+    m_ExpandedIDs: 000000004e61000050610000526100005461000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -855,7 +855,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000e64f0000e84f0000ea4f0000ec4f000000ca9a3b
+    m_ExpandedIDs: 000000004e610000506100005261000054610000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -907,7 +907,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 89}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 64
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207
