@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/NextView.unity
     guid: 50c4f93e130fe2f40924db9a0ef7a315
+  - enabled: 1
+    path: Assets/Scenes/Multiplayer Functionality.unity
+    guid: 37fa7de5bcd702a489023b42aebf2353
   m_configObjects: {}
