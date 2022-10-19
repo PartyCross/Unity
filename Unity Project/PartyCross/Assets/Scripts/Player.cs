@@ -145,8 +145,38 @@ public class Player : MonoBehaviour
                 }
                 MoveCharacter(new Vector3(-1, 0, zDifference));
             }
+
+            if (Input.GetKeyDown(KeyCode.Keypad5) || (keycodeConversion == KeyCode.Keypad5) && !isHopping)
+            {
+                float zDifference = 0;
+                if(transform.position.z % 1 != 0)
+                {
+                    zDifference = Mathf.Round(transform.position.z + 1) - transform.position.z;
+                }
+                MoveCharacter(new Vector3(1, 0, zDifference));
+            }
+            else if (Input.GetKeyDown(KeyCode.Keypad6) || (keycodeConversion == KeyCode.Keypad6) && !isHopping)
+            {
+                MoveCharacter(new Vector3(0, 0, 1));
+            }
+            else if (Input.GetKeyDown(KeyCode.Keypad4) || (keycodeConversion == KeyCode.Keypad4) && !isHopping)
+            {
+                MoveCharacter(new Vector3(0, 0, -1));
+            }
+            else if (Input.GetKeyDown(KeyCode.Keypad8) || (keycodeConversion == KeyCode.Keypad8) && !isHopping)
+            {
+                float zDifference = 0;
+                if (transform.position.z % 1 != 0)
+                {
+                    zDifference = Mathf.Round(transform.position.z + 1) - transform.position.z;
+                }
+                MoveCharacter(new Vector3(-1, 0, zDifference));
+            }
         }
 
+        if(this.transform.position.x < -1) {
+            UndoLastMove();
+        }
 
         FixedUpdate();
     }
