@@ -13,7 +13,7 @@ public class ButtonHandler : MonoBehaviour
 
     public void CreateGame()
     {
-        //pending server
+        SceneManager.LoadScene(3);
     }
 
     public void PlayGame()
@@ -25,6 +25,14 @@ public class ButtonHandler : MonoBehaviour
     {
         //may not see use
         Application.Quit();
+    }
+
+    public void IsSinglePlayer() {
+        CurrentSettings.IsSinglePlayer();
+    }
+
+    public void IsMultiPlayer() {
+        CurrentSettings.IsMultiPlayer();
     }
 
     public void ReturnToMain()

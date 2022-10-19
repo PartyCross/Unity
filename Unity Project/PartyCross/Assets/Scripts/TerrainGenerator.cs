@@ -22,6 +22,7 @@ public class TerrainGenerator : MonoBehaviour
             SpawnTerrain(true, new Vector3(0,0,0));
         }
         maxTerrainCount = currentTerrains.Count + 1;
+        SpawnFieldOfGrass(true, new Vector3(0,0,0));
     }
 
     public void SpawnTerrain(bool isStart, Vector3 playerPos)
@@ -44,6 +45,15 @@ public class TerrainGenerator : MonoBehaviour
                     }
                 }
                 currentPosition.x++;
+            }
+        }
+    }
+
+    public void SpawnFieldOfGrass(bool isStart, Vector3 playerPos) {
+        Vector3 thisPos = new Vector3(0,0,0);
+        if(playerPos.x == thisPos.x && isStart) {
+            for(; thisPos.x >= -20; thisPos.x--) {
+                GameObject terrain = Instantiate(terrainDatas[0].possibleTerrain[Random.Range(0, 3)], thisPos, Quaternion.identity, terrainHolder);
             }
         }
     }
