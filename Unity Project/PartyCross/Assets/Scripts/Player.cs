@@ -10,10 +10,17 @@ public class Player : MonoBehaviour
 
     [SerializeField] private TerrainGenerator terrainGenerator;
     [SerializeField] private Text scoreText;
+    [SerializeField] private Text P1Score;
+    [SerializeField] private Text P2Score;
+    [SerializeField] private Text P3Score;
+    [SerializeField] private Text P4Score;
 
     private Animator animator;
     private bool isHopping;
-    private int score;
+    private int POneScore;
+    private int PTwoScore;
+    private int PThreeScore;
+    private int PFourScore;
     private KeyCode keycodeConversion;
     private AudioSource stepSound;
     private Vector3 prevMove;
@@ -26,13 +33,41 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //P1 Score Update
         if (Input.GetKeyDown(KeyCode.S))
         {
-            score = score + 100;
+            POneScore = POneScore + 100;
         }
-        else if((score!=0) && (Input.GetKeyDown(KeyCode.W)))
+        else if((POneScore!=0) && (Input.GetKeyDown(KeyCode.W)))
         {
-            score = score - 100;
+            POneScore = POneScore - 100;
+        }
+        //P2 Score update
+        else if (Input.GetKeyDown(KeyCode.Keypad5))
+        {
+            POneScore = POneScore + 100;
+        }
+        else if ((POneScore != 0) && (Input.GetKeyDown(KeyCode.Keypad8)))
+        {
+            POneScore = POneScore - 100;
+        }
+        //P3 Score update
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            POneScore = POneScore + 100;
+        }
+        else if ((POneScore != 0) && (Input.GetKeyDown(KeyCode.UpArrow)))
+        {
+            POneScore = POneScore - 100;
+        }
+        //P4 Score update
+        else if (Input.GetKeyDown(KeyCode.K))
+        {
+            POneScore = POneScore + 100;
+        }
+        else if ((POneScore != 0) && (Input.GetKeyDown(KeyCode.I)))
+        {
+            POneScore = POneScore - 100;
         }
     }
 
@@ -62,7 +97,9 @@ public class Player : MonoBehaviour
         if(this.transform.position.y < -5) {
             this.GetComponent<PlayerHealth>().decreaseHealth(100000);
         }
-        scoreText.text = "Score: " + score;
+        scoreText.text = "Score: " + (POneScore + PTwoScore + PThreeScore + PFourScore);
+        
+
         if (Input.GetKeyDown(KeyCode.S) || (keycodeConversion == KeyCode.S) && !isHopping)
         {
             float zDifference = 0;
@@ -89,9 +126,9 @@ public class Player : MonoBehaviour
             }
             MoveCharacter(new Vector3(-1, 0, zDifference));
         }
-
+       
         //MULTIPLAYER
-        if(CurrentSettings.PlayType) {
+        if (CurrentSettings.PlayType) {
             if (Input.GetKeyDown(KeyCode.K) || (keycodeConversion == KeyCode.K) && !isHopping)
             {
                 float zDifference = 0;
@@ -194,7 +231,7 @@ public class Player : MonoBehaviour
     private void UndoLastMove() {
         transform.position = (transform.position - this.prevMove);
         terrainGenerator.SpawnTerrain(false, transform.position);
-        this.score -= 100;     
+        this.POneScore -= 100;     
     }
 
     public void FinishHop()
