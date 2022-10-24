@@ -45,29 +45,29 @@ public class Player : MonoBehaviour
         //P2 Score update
         else if (Input.GetKeyDown(KeyCode.Keypad5))
         {
-            POneScore = POneScore + 100;
+            PTwoScore = PTwoScore + 100;
         }
         else if ((POneScore != 0) && (Input.GetKeyDown(KeyCode.Keypad8)))
         {
-            POneScore = POneScore - 100;
+            PTwoScore = PTwoScore - 100;
         }
         //P3 Score update
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            POneScore = POneScore + 100;
+            PThreeScore = PThreeScore + 100;
         }
         else if ((POneScore != 0) && (Input.GetKeyDown(KeyCode.UpArrow)))
         {
-            POneScore = POneScore - 100;
+            PThreeScore = PThreeScore - 100;
         }
         //P4 Score update
         else if (Input.GetKeyDown(KeyCode.K))
         {
-            POneScore = POneScore + 100;
+            PFourScore = PFourScore + 100;
         }
         else if ((POneScore != 0) && (Input.GetKeyDown(KeyCode.I)))
         {
-            POneScore = POneScore - 100;
+            PFourScore = PFourScore - 100;
         }
     }
 
@@ -97,7 +97,24 @@ public class Player : MonoBehaviour
         if(this.transform.position.y < -5) {
             this.GetComponent<PlayerHealth>().decreaseHealth(100000);
         }
-        scoreText.text = "Score: " + (POneScore + PTwoScore + PThreeScore + PFourScore);
+
+        if(CurrentSettings.PlayType) {
+            scoreText.text = "Team Score: " + (POneScore + PTwoScore + PThreeScore + PFourScore);
+        } else {
+            scoreText.text = "Score: " + (POneScore + PTwoScore + PThreeScore + PFourScore);
+        }
+
+        if(CurrentSettings.PlayType) {
+            P1Score.text = "WSAD Score: " + this.POneScore;
+            P2Score.text = "IKJL Score: " + this.PTwoScore;
+            P3Score.text = "ARROWS Score: " + this.PThreeScore;
+            P4Score.text = "NUMPAD Score: " + this.PFourScore;
+        } else {
+            P1Score.text = "";
+            P2Score.text = "";
+            P3Score.text = "";
+            P4Score.text = "";
+        }
         
 
         if (Input.GetKeyDown(KeyCode.S) || (keycodeConversion == KeyCode.S) && !isHopping)
